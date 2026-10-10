@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5ef" />
+    <meta name="description" content="A thoughtful corner of the internet for notes, ideas, and the people who make them." />
+    <title>Commonplace — good things, shared</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="wordmark" href="#home" aria-label="Commonplace home"><span class="brand-mark">c.</span><span>commonplace</span></a>
+        <button class="profile-switcher" type="button" aria-label="Your profile">
+          <span class="avatar avatar-you">M</span><span class="profile-meta"><strong>Morgan Lee</strong><small>@morganmakes</small></span><span class="switch-dots">···</span>
+        </button>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-item active" href="#home" data-view="home"><span class="nav-icon">⌂</span>Home <span class="nav-indicator"></span></a>
+          <a class="nav-item" href="#discover" data-view="discover"><span class="nav-icon">⌕</span>Discover</a>
+          <a class="nav-item" href="#bookmarks" data-view="bookmarks"><span class="nav-icon">♧</span>Saved</a>
+          <a class="nav-item" href="#notifications" data-view="notifications"><span class="nav-icon">♧</span>Notifications<span class="notification-dot"></span></a>
+          <a class="nav-item" href="#messages" data-view="messages"><span class="nav-icon">▱</span>Messages<span class="message-count">2</span></a>
+        </nav>
+        <div class="sidebar-rule"></div>
+        <div class="sidebar-heading"><span>YOUR CORNERS</span><button type="button" class="plain-icon" aria-label="Add a corner" title="Add a corner">+</button></div>
+        <a class="corner-link" href="#topic-design" data-topic="Design"><span class="corner-dot dot-coral"></span>Design people <small>12</small></a>
+        <a class="corner-link" href="#topic-gardens" data-topic="Slow living"><span class="corner-dot dot-green"></span>Small gardens <small>8</small></a>
+        <a class="corner-link" href="#topic-writing" data-topic="Writing"><span class="corner-dot dot-blue"></span>Daily pages <small>24</small></a>
+        <button class="new-corner" type="button"><span>+</span> Find your people</button>
+        <div class="sidebar-bottom"><span class="online-indicator"></span><span>All quiet on your corner</span><button type="button" class="plain-icon" aria-label="Settings" title="Settings">⚙</button></div>
+      </aside>
+
+      <main class="main-column" id="home">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark">c.</span><span>commonplace</span></div>
+          <div class="topbar-date"><span class="date-sun">✳</span> SATURDAY, OCTOBER 10</div>
+          <div class="topbar-actions"><button type="button" class="icon-button search-toggle" aria-label="Search" title="Search">⌕</button><button type="button" class="compose-top"><span>+</span> Write a note</button></div>
+        </header>
+        <section class="feed-intro">
+          <div><span class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY EDITION</span><h1>A little more <em>human.</em></h1><p>Ideas, moments, and things worth passing along.</p></div>
+          <div class="edition-count"><strong>04</strong><span>NEW SINCE<br />YOUR LAST VISIT</span></div>
+        </section>
+        <div class="feed-toolbar">
+          <div class="feed-tabs" role="tablist" aria-label="Feed filter"><button class="feed-tab active" type="button" data-filter="For you" role="tab">For you <span class="tab-spark">✳</span></button><button class="feed-tab" type="button" data-filter="Following" role="tab">Following</button><button class="feed-tab" type="button" data-filter="Latest" role="tab">Latest</button></div>
+          <label class="search-box" aria-label="Search posts"><span>⌕</span><input id="search-input" type="search" placeholder="Search notes" /></label>
+        </div>
+        <section class="composer" aria-label="Create a post">
+          <div class="composer-top"><span class="avatar avatar-you">M</span><button type="button" class="composer-prompt" id="open-composer">What’s on your mind, Morgan?</button></div>
+          <div class="composer-bottom"><div class="composer-tools"><button type="button" class="composer-tool" data-tool="photo"><span class="tool-icon photo-icon">▧</span>Photo</button><button type="button" class="composer-tool" data-tool="link"><span class="tool-icon link-icon">↗</span>Link</button><button type="button" class="composer-tool" data-tool="topic"><span class="tool-icon topic-icon">#</span>Topic</button></div><button class="share-button" type="button" id="open-composer-bottom">Share a thought <span>↗</span></button></div>
+        </section>
+        <div class="feed-label-row"><span id="feed-label">A FEW THINGS FROM YOUR PEOPLE</span><button type="button" class="sort-button" id="sort-button">Curated <span>⌄</span></button></div>
+        <section class="post-list" id="post-list" aria-live="polite"></section>
+        <div class="end-note"><span>✳</span><p>You’re all caught up.<br /><small>Go make something, then come back.</small></p></div>
+      </main>
+
+      <aside class="right-rail">
+        <section class="rail-section today-section"><div class="rail-title"><span>THE LITTLE THINGS</span><span class="sparkle">✳</span></div><h2>Today, take<br />the <em>scenic route.</em></h2><p>A small nudge from the Commonplace community.</p><div class="today-image" role="img" aria-label="A quiet path through a garden"><span class="image-caption">A NOTE TO SELF, BY <strong>JULES M.</strong></span></div></section>
+        <section class="rail-section trending-section"><div class="rail-title"><span>WANDERING AROUND</span><button type="button" class="text-action" id="refresh-topics">Refresh ↗</button></div><button class="topic-row" type="button" data-topic="Slow living"><span class="topic-number">01</span><span class="topic-name"><strong>#slowliving</strong><small>little rituals, big feelings</small></span><span class="topic-arrow">↗</span></button><button class="topic-row" type="button" data-topic="Design"><span class="topic-number">02</span><span class="topic-name"><strong>#gooddesign</strong><small>things made with care</small></span><span class="topic-arrow">↗</span></button><button class="topic-row" type="button" data-topic="Writing"><span class="topic-number">03</span><span class="topic-name"><strong>#morningpages</strong><small>starting before you're ready</small></span><span class="topic-arrow">↗</span></button></section>
+        <section class="rail-section people-section"><div class="rail-title"><span>GOOD PEOPLE, NEARBY</span><button type="button" class="text-action" id="see-people">See all ↗</button></div><div class="person-row"><img class="avatar-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces" alt="" /><span class="person-meta"><strong>Jules Martin</strong><small>Writes about noticing</small></span><button class="follow-button" type="button">Follow</button></div><div class="person-row"><img class="avatar-image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces" alt="" /><span class="person-meta"><strong>Ravi Shah</strong><small>Makes useful things</small></span><button class="follow-button" type="button">Follow</button></div></section>
+        <footer class="rail-footer"><span>ABOUT</span><span>GUIDELINES</span><span>GOOD NEIGHBORS</span><small>MADE FOR THE IN-BETWEEN MOMENTS · 2026</small></footer>
+      </aside>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation"><a class="active" href="#home" data-view="home"><span>⌂</span>Home</a><a href="#discover" data-view="discover"><span>⌕</span>Discover</a><button type="button" id="mobile-compose" aria-label="Write a note">+</button><a href="#bookmarks" data-view="bookmarks"><span>♧</span>Saved</a><a href="#messages" data-view="messages"><span>▱</span>Inbox</a></nav>
+
+    <dialog class="compose-dialog" id="compose-dialog"><form method="dialog" id="compose-form"><div class="dialog-header"><div><span class="dialog-kicker">A FRESH PAGE</span><h2>Put it out there.</h2></div><button class="dialog-close" type="button" aria-label="Close">×</button></div><div class="dialog-author"><span class="avatar avatar-you">M</span><span><strong>Morgan Lee</strong><small>Sharing with your people</small></span></div><textarea id="post-content" maxlength="500" placeholder="A thought, a tiny discovery, something you can't stop thinking about…" required></textarea><div class="compose-preview" id="compose-preview"><img id="preview-image" alt="Selected attachment preview" /><span id="preview-caption"></span><button type="button" id="remove-attachment" aria-label="Remove attachment">×</button></div><div class="dialog-controls"><div class="attach-controls"><label class="attach-button" for="image-upload">▧ <span>Photo</span></label><input id="image-upload" type="file" accept="image/*" /><button class="attach-button" type="button" id="topic-picker"># <span>Add a topic</span></button></div><div class="dialog-submit"><span id="char-count">0 / 500</span><button class="share-button" type="submit">Publish note <span>↗</span></button></div></div></form></dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
